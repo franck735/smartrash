@@ -1,0 +1,35 @@
+From 13e39e1eafbccefc2f47a0f59e0b182e209649e3 Mon Sep 17 00:00:00 2001
+From: marcelinkyambo <marcelinkyambo@gmail.com>
+Date: Sat, 28 Feb 2026 21:20:42 +0200
+Subject: [PATCH 2/2] Add super_admin role system and environment setup
+ documentation
+
+---
+ src/integrations/supabase/types.ts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/integrations/supabase/types.ts b/src/integrations/supabase/types.ts
+index 015ae8d..a329808 100644
+--- a/src/integrations/supabase/types.ts
++++ b/src/integrations/supabase/types.ts
+@@ -242,7 +242,7 @@ export type Database = {
+       }
+     }
+     Enums: {
+-      app_role: "admin" | "customer" | "driver" | "household" | "owner"
++      app_role: "super_admin" | "admin" | "customer" | "driver" | "household" | "owner"
+     }
+     CompositeTypes: {
+       [_ in never]: never
+@@ -370,7 +370,7 @@ export type CompositeTypes<
+ export const Constants = {
+   public: {
+     Enums: {
+-      app_role: ["admin", "customer", "driver", "household", "owner"],
++      app_role: ["super_admin", "admin", "customer", "driver", "household", "owner"],
+     },
+   },
+ } as const
+-- 
+2.45.1.windows.1
+
