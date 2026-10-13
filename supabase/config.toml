@@ -1,0 +1,53 @@
+project_id = "uxfppmqmabeydmzapkbt"
+
+[auth]
+enabled = true
+site_url = "https://imyandasmart.vercel.app"
+additional_redirect_urls = ["https://imyandasmart.vercel.app", "https://imyandasmart.vercel.app/dashboard", "https://imyandasmart.vercel.app/reset-password", "imyandasmart://auth/callback"]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+enable_signup = true
+enable_anonymous_sign_ins = false
+minimum_password_length = 6
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+max_frequency = "60s"
+otp_length = 6
+otp_expiry = 3600
+
+[auth.email.template.confirmation]
+subject = "Welcome to ImyandaSmart - Confirm Your Email"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.email.template.recovery]
+subject = "ImyandaSmart - Reset Your Password"
+content_path = "./supabase/templates/recovery.html"
+
+[auth.email.template.invite]
+subject = "You've Been Invited to ImyandaSmart"
+content_path = "./supabase/templates/invite.html"
+
+[auth.email.template.magic_link]
+subject = "Your ImyandaSmart Login Link"
+content_path = "./supabase/templates/magic_link.html"
+
+[auth.email.template.email_change]
+subject = "ImyandaSmart - Confirm Email Change"
+content_path = "./supabase/templates/email_change.html"
+
+[auth.sms]
+enable_signup = false
+enable_confirmations = false
+
+[auth.external.apple]
+enabled = false
+
+[auth.external.google]
+enabled = false
+
+[auth.external.github]
+enabled = false
